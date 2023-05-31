@@ -1,0 +1,255 @@
+
+header{
+    width: auto;
+    height: 100px;
+    background-color: #0d5046;
+    font-family: quicksand;
+    margin: 0 auto;
+}
+
+.titulo-principal{
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+.logo{
+    width:  90px;
+    height: 90px;
+    margin: 5px 5px;
+}
+
+body {
+    font-family: quicksand;
+    background-color: #fffeb3;
+    width: auto;
+    height: auto;
+    
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+    margin: 20px auto;
+}
+
+.caja-de-texto{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+.mensaje {
+    display: flex;
+    width: 100%;
+    border: none;
+    font-size: 30px;
+    font-weight: 350;
+    background-color: #f8f68a;
+    font-family: quicksand;
+    flex-direction: column;
+    border-radius: 15px;
+
+}
+
+.mensaje::placeholder{
+    font-style: italic;
+    color: #0d5046;
+    
+}
+
+.mensaje:focus, .mensaje:active{
+    border:#0d5046;
+    box-shadow: 3px 3px 3px 3px #0d5046;
+
+}
+
+.prohibiciones{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.prohibiciones p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #f3763c;
+    opacity: 0,9;
+    flex: none;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    }
+
+.boton-encriptar, .boton-desencriptar{
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 5px;
+    border: none;
+}
+
+.boton-encriptar{
+    background-color: #0d5046;
+    color: #f8f68a;
+}
+
+.boton-desencriptar{
+    background-color: #f8f68a;
+    color: #0d5046;
+}
+.boton-encriptar:hover, .boton-desencriptar:hover{
+    transform: scale(1,1.1);
+    font-size: 22px;
+}
+
+.quitar{
+	display: none;
+}
+
+.ajustar {
+	height: auto;
+	min-height: calc(100% - 67px - 32px);
+	pointer-events: all;
+	text-align: left;
+	overflow: auto;
+}
+.ajuste{
+	justify-content: space-between;
+}
+.caja-respuesta{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 60%;
+    height: 550px;
+    align-items: center;
+    background-color: #f8f68a;
+    border-radius: 15px;
+    flex-direction: column;
+    grid-gap: 20px;
+    margin: 20px 0;
+}
+
+.mensaje-respuesta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    grid-gap: 20px;
+}
+
+.caja-respuesta h2{
+    width: 60%;
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+    color: #0d5046;
+    opacity: 0,8;
+}
+
+.caja-respuesta p{
+    width: 60%;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+    color: #f3763c;
+    opacity: 0,7;
+}
+
+.caja-respuesta img{
+    position: relative;
+    width: 80%;
+    height: 50%;
+    top: 25px;
+
+}
+
+.copyButton{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 85%;
+    width: 50%;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 20px;
+    line-height: 5px;
+    border: none;
+    color: #0d5046;
+    background-color: #f3763c;
+    border-color: #0d5046;
+    margin: 15px 0;
+}
+
+.boton-copiar:hover{
+    transform: scale(1,1.1);
+    font-size: 22px;
+}
+
+footer{
+    width: auto;
+    background-color: #0d5046;
+    margin: 0 auto;
+}
+
+.footer-caja{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.logo-alura{
+    height: 100px;
+    margin: 5px 5px;
+    align-items: end;
+} 
+
+@media screen and (max-width:700px){
+    .container{
+        flex-direction: column;
+    }
+   
+    
+    .titulo-principal{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .caja-respuesta{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+    }
+        
+  
+        
+    
+}

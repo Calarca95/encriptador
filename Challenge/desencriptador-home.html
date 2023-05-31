@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Encripto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header>
+            <div class="titulo-principal">
+                <h1><img src="imagenes/cripto-logo-corte.jpg" class="logo"></h1>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="caja-de-texto">
+                    <textarea name="mensaje" class="mensaje" id="mensaje" cols="30" rows="11" placeholder="Ingresa aquí tu mensaje"></textarea>
+
+                    <div class="prohibiciones">
+                        <p>No debes escribir en mayusculas, ni usar acentos o caracteres especiales.</p>
+                    </div>
+                    <div class="botones">
+                        <button class="boton-encriptar" id ="boton-encriptar">Encriptar</button>
+                        <button class="boton-desencriptar" id="boton-desencriptar">Desencriptar</button>
+                    </div>
+                </div>
+                <div class="caja-respuesta" id="caja-respuesta">
+                    <img src="imagenes/Muñeco.png" alt="Imagen que indica que no existe ningún texto encriptado o desencriptado" id="muñeco">
+                    <div class="mensaje-respuesta" id="mensaje-respuesta">
+                        <h2 id="caja-vacia">No se ha encontrado ningun mensaje</h2>
+                        <p id="mensaje-caja-vacia">Prueba a encriptar o desencriptar un mensaje</p>
+                        <textarea name="mensaje-encriptado" id="mensaje-encriptado" cols="30" rows="10" class="mensaje-encriptado"></textarea>
+                    </div>
+                    <div class="cajacopiar">
+                        <button id="boton-copiar" onclick="copyToClipboard()">Copiar</button>
+                        <!-- <div class="boton-copiar" id="boton-copiar">Copiar</div> -->
+                    </div>
+                </div>
+             </div>
+
+        </main>
+
+    </body>
+
+    <script src="index.js"></script>
+
+    <footer>
+        <div class="footer-caja">
+            <img src="imagenes/cripto-logo-corte.jpg" class="logo">
+            <img src="imagenes/Vector.png" class="logo-alura">
+        </div>
+
+        <!-- <p class="copyright">&copy Copyright Barbería Alura - 2020</p> -->
+    </footer>
