@@ -13,6 +13,8 @@ const muñeco = document.getElementById("muñeco");
 const cajavacia = document.getElementById("caja-vacia");
 const cajarespuesta = document.getElementById("caja-respuesta")
 const cajacopiar = document.getElementById("cajacopiar")
+const mensajecajavacia = document.getElementById("mensaje-caja-vacia")
+
 
 const remplace = (newvalue) => {
 	respuesta.innerHTML = newvalue;
@@ -22,6 +24,7 @@ const remplace = (newvalue) => {
 	mensaje.style.height = "auto"
 	mensaje.placeholder = "Ingresa aquí tu mensaje";
 	muñeco.src = "imagenes/cripto-logo-corte.jpg";
+	mensajecajavacia.classList.remove("mensaje-caja-vacia");
 	//cajavacia = "No se ha encontrado ningun mensaje";
 	//copiar.classList.remove("boton-copiar");
 }
@@ -47,7 +50,7 @@ let reemplazar = [
 	["a", "ai"],
 	["u", "ufat"]
 ];
-
+var textoGuardado = "";
 encriptar.addEventListener('click', () => {
 
 	const texto = mensaje.value.toLowerCase();
@@ -57,11 +60,15 @@ encriptar.addEventListener('click', () => {
 			for (let n = 0; n < reemplazar.length; n++) {
 				if (newtext.includes(reemplazar[n][0])) {
 					newtext = newtext.replaceAll(reemplazar[n][0], reemplazar[n][1]);
+					console.log(newtext);
 				};
 			};
+			
             return newtext;
+			
 		};
 		remplace(encript(texto));
+		
 	} else {
 		alert("Ingrese texto para encriptar");
 		reset();
@@ -80,6 +87,7 @@ desencriptar.addEventListener('click', () => {
 				};
 			};
 			return newtext;
+			
 		};
 		remplace(desencript(texto));
 	} else {
@@ -87,56 +95,13 @@ desencriptar.addEventListener('click', () => {
 		reset();
 	};
 });
-function copiar(){
-    mensaje.select();
-    navigator.clipboard.writeText(mensaje.value)
-    mensaje.value = "";
-    alert("Texto Copiado")
+
+function copiarTexto() {
+	let copyText = document.getElementById("mensaje");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	alert("Copied: " + copyText.value);
 }
-// function copyToClipboard() {
-//     var text = document.getElementById("mensaje");
-//     var aux = document.createElement("input");
-//     aux.setAttribute("value", text.textContent);
-//     document.body.appendChild(aux);
-//     aux.select();
-//     document.execCommand('copy');
-//     document.body.removeChild(aux);
 
-    
-    
-//     //var copyButton = document.getElementById("copyButton");
-//     //copyButton.innerHTML = "¡Copiado!";
-//     // setTimeout(function() {
-//     //     copyButton.innerHTML = "Copiar";
-//     //   }, 2000);
-//     }
 
-// document.getElementById("boton-copiar").addEventListener("click", copyText);
-// function copyText() {
-//     var textToCopy = document.getElementById("mensaje");
-//     console.log(textToCopy);
-//     textToCopy.select();
-//     document.execCommand('copy');
-//}
-
-// copiar.addEventListener("click", () => {
-// 	let final = respuesta;
-// 	final.select();
-// 	document.execCommand('copy');
-//     return texto;
-	//navigator.clipboard.writeText(texto.value);
-	//clipboard función no compatible con móviles
-	//alert("Texto Copiado");
-	//reset();
-//});
-//auto ajuste de textarea
-// mensaje.addEventListener("change", e => {
-// 	mensaje.style.height = "auto";
-// 	let scHeight = e.target.scrollHeight;
-// 	mensaje.style.height = `${scHeight}px`;
-// });
-// mensaje.addEventListener("keyup", e => {
-// 	mensaje.style.height = "auto";
-// 	let scHeight = e.target.scrollHeight;
-// 	mensaje.style.height = `${scHeight}px`;
-// });
